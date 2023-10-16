@@ -18,4 +18,4 @@ After the pitch, now you will code - nice right? but don’t forget you will pre
 Have fun!
 
 ## More info
-When you are ready to be reviewed, schedule the portfolio project using the following link to be reviewed by a staff member.
+- [Google Slide Presentation](https://docs.google.com/presentation/d/15R5GJ8tSiv15Um0j940nkIO55vz2bVvLR6P__LDvt00/edit?usp=drivesdk)
