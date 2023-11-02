@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
@@ -24,15 +24,13 @@ def register_page(request):
             messages.warning(request, "Email already exists")
             return HttpResponseRedirect(request.path_info)
 
-    user_obj = User.objects.create_user(first_name=first_name, last_name=last_name, email=email, username=email, password=password)
-    user_obj.set_password(password)
-    user_obj.save()
+        user_obj = User.objects.create_user(first_name=first_name, last_name=last_name, email=email, username=email,)
+        user_obj.set_password(password)
+        user_obj.save()
 
-    messages.warning(request, "Check your inbox email sent to your mail.")
-    return HttpResponseRedirect(request.path_info)
+        messages.warning(request, "Check your inbox email sent to your mail.")
+        return HttpResponseRedirect(request.path_info)
+
     
-    
-    
-    
-def register_page(request):
-    return render(request, "accounts/register.html")        
+
+    return render(request, "accounts/register.html")
