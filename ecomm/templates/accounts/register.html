@@ -12,6 +12,7 @@
             <h4 class="card-title mb-4">Sign Up</h4>
             <form method="POST">
                 {% csrf_token %}
+                {% include "base/alert.html" %}
                 <div class="form-group">
                     <input name="" class="form-control" required placeholder="Firstname" name="first_name" type="text">
                 </div> <!-- form-group// -->
@@ -38,7 +39,7 @@
         </div> <!-- card-body.// -->
     </div> <!-- card .// -->
 
-    <p class="text-center mt-4">Already have an account? <a href="login.html">Sign in</a></p>
+    <p class="text-center mt-4">Already have an account? <a href="#">Sign in</a></p>
     <br><br>
     <!-- ============================ COMPONENT LOGIN  END.// ================================= -->
 

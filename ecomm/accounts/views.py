@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib import messages
-
+from django.contrib.auth.models import User
 # Create your views here.
 
 
@@ -17,5 +17,9 @@ def register_page(request):
         email= request.POST.get('email')
         password = request.POST.get('password')
 
+        user_obj = User.objects.filter(username= email)
 
+        if user_obj.exists():
+            messages.info(request, "Email already exists")
+            return render(request, "accounts/register.html")
     return render(request, "accounts/register.html")
