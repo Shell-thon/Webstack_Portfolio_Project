@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from products.models import Product
 # Create your views here.
 
 
@@ -8,4 +8,9 @@ from django.shortcuts import render
 
 
 def get_product(request, slug):
-    return render(request, 'product/product.html')
+    try:
+        product = Product.objects.get(slug=slug)
+        return render(request, 'product/product.html', context = {'product': product})
+
+    except Exception as e:
+        print (e)
