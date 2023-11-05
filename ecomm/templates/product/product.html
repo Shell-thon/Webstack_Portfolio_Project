@@ -89,10 +89,14 @@
 							<label>Select size</label>
 							<div class="mt-1">
                 {% for size in product.size_variant.all %}
-                  <label class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" onchange="get_correct_price('{{size.size_name}}')" name="select_size" {% if selected_size == size.size_name %} checked {% endif %} class="custom-control-input">
-                    <div class="custom-control-label">{{size.size_name}}</div>
-                  </label> 
+
+                  <div class="form-check">
+                    <label class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" onchange="get_correct_price('{{size.size_name}}')" name="select_size" {% if selected_size == size.size_name %} checked {% endif %} class="custom-control-input">
+                      <div class="custom-control-label">{{size.size_name}}</div>
+                    </label>
+                  </div>
+
                 {% endfor %}
 							</div>
             </div>
@@ -115,7 +119,7 @@
 
     <script>
       function get_correct_price(size){
-        window.location.href = window.location.href + '?size=${size}'
+        window.location.href = window.location.pathname + `?size=${size}`
       }
     </script>
 
